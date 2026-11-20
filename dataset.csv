@@ -1,0 +1,11 @@
+ID,Text,Label
+1,I love this product.,Positive
+2,The service was terrible.,Negative
+3,My package arrived yesterday.,Neutral
+4,My order is missing and nobody is helping me.,Complaint
+5,This is an excellent experience.,Positive
+6,The quality is very poor.,Negative
+7,The meeting starts at 10 AM.,Neutral
+8,I want a refund because my product is damaged.,Complaint
+9,I'm very happy with my purchase.,Positive
+10,The delivery was disappointing.,Negative
