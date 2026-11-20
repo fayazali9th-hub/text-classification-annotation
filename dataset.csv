@@ -1,0 +1,51 @@
+ID,Text,Label
+1,I love this product; it works exactly as expected.,Positive
+2,The support team solved my issue quickly and politely.,Positive
+3,The new interface is clean and easy to use.,Positive
+4,I'm very happy with the quality of this purchase.,Positive
+5,The delivery arrived earlier than promised. Great service!,Positive
+6,This app makes managing my tasks much easier.,Positive
+7,The staff were friendly and helpful throughout my visit.,Positive
+8,Excellent value for the price.,Positive
+9,The update fixed the problem I was having.,Positive
+10,I would happily recommend this service to my colleagues.,Positive
+11,The battery life is disappointing.,Negative
+12,The website is confusing and difficult to navigate.,Negative
+13,The headphones sound worse than I expected.,Negative
+14,I regret buying this model.,Negative
+15,The food was cold and tasted unpleasant.,Negative
+16,The video quality is poor in low light.,Negative
+17,This explanation is unclear and incomplete.,Negative
+18,The fabric feels cheap and uncomfortable.,Negative
+19,The app is slow and frustrating to use.,Negative
+20,"The room was noisy, so I could not sleep well.",Negative
+21,The package contains two blue notebooks.,Neutral
+22,The appointment is scheduled for Thursday at 3 PM.,Neutral
+23,This laptop has 16 GB of memory and a 512 GB drive.,Neutral
+24,The shop opens at 9 AM on weekdays.,Neutral
+25,The report includes sales figures for the last quarter.,Neutral
+26,My order number is 48291.,Neutral
+27,The meeting will take place in Conference Room B.,Neutral
+28,The phone was released in September.,Neutral
+29,There are three payment methods available at checkout.,Neutral
+30,The package was delivered to the reception desk.,Neutral
+31,"My order has not arrived, and I need someone to locate it.",Complaint
+32,I was charged twice for one purchase. Please refund the extra payment.,Complaint
+33,The item arrived broken; I would like a replacement.,Complaint
+34,I cannot log in because the password reset link does not work. Please help.,Complaint
+35,The technician missed the appointment. Please arrange another visit.,Complaint
+36,I received the wrong size and need it exchanged.,Complaint
+37,My subscription was cancelled without my permission. Please restore it.,Complaint
+38,The delivery driver left my parcel at the wrong address. I need it recovered.,Complaint
+39,I have been waiting three weeks for a refund. Please check its status.,Complaint
+40,The account was locked even though I entered the correct details. Please investigate.,Complaint
+41,"The product looks nice, but the screen is too dim for outdoor use.",Negative
+42,"The parcel arrived yesterday, but one item is missing. Please send the missing item.",Complaint
+43,Your representative explained the process clearly. Thank you.,Positive
+44,The invoice lists the purchase date as 12 November.,Neutral
+45,I am unhappy with the frequent crashes in this application.,Negative
+46,I cannot access the course I paid for. Please restore my access.,Complaint
+47,The café serves breakfast from 7 AM until 11 AM.,Neutral
+48,The replacement arrived and works perfectly. I'm pleased with the solution.,Positive
+49,The instructions are poorly written and hard to understand.,Negative
+50,"My payment went through, but the order was not created. Please resolve this.",Complaint
