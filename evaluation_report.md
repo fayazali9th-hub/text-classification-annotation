@@ -1,29 +1,55 @@
 # Dataset Evaluation Report
 
-## Dataset summary
-- Total records: 50
-- Unique IDs: 50
-- Required columns: `ID`, `Text`, `Label`
-- Missing text values: 0
-- Missing labels: 0
-- Labels outside the defined taxonomy: 0
+## Dataset Summary
 
-## Label distribution
-| Label | Count |
+| Measure | Result |
+|---|---:|
+| Total records | 50 |
+| Unique IDs | 50 |
+| Missing text values | 0 |
+| Missing labels | 0 |
+| Labels outside the approved taxonomy | 0 |
+
+## Label Distribution
+
+| Primary label | Count |
 |---|---:|
 | Positive | 12 |
 | Negative | 13 |
 | Neutral | 12 |
 | Complaint | 13 |
+| **Total** | **50** |
 
-## Structural checks
-- All records have an ID, text, and label.
-- IDs are unique and sequential from 1 to 50.
-- Every label belongs to the four-label taxonomy.
-- Text values are non-empty.
+The categories are nearly balanced in this deliberately constructed sample. This distribution should not be interpreted as representative of real customer messages.
 
-## Interpretation
-The examples are distributed across all four categories, with 12–13 examples per category. This is a deliberately small demonstration dataset, not a statistically representative sample.
+## Validation
 
-## What this report does not claim
-No independent second annotation pass, inter-annotator agreement score, model accuracy, or production validation has been performed. Structural checks alone cannot prove semantic correctness.
+The dataset has been checked for:
+- Required columns: `ID`, `Text`, and `Label`
+- Unique record IDs
+- Non-empty text and label fields
+- Labels restricted to the four categories in the annotation guide
+- Record and label counts
+
+Run the included validation script from the repository root:
+
+```bash
+python3 validate_dataset.py
+```
+
+The script checks structural integrity and reports the label distribution. It does not determine whether a label is semantically correct.
+
+## Annotation Quality and Limitations
+
+The examples are synthetic and were prepared for demonstration. The dataset has not undergone independent double annotation, formal adjudication, or inter-annotator agreement measurement. No model training or model-performance evaluation is claimed.
+
+A stronger production workflow would include:
+1. Independent annotation by at least two annotators on an agreed sample.
+2. Disagreement review and documented adjudication.
+3. Calculation of an appropriate agreement statistic, such as Cohen's kappa for two annotators.
+4. Guideline revision and re-annotation where recurring ambiguity is found.
+5. A versioned audit trail for dataset and guideline changes.
+
+## Conclusion
+
+The current dataset demonstrates a documented four-way labeling workflow and basic structural quality checks. Its size and synthetic nature make it suitable as a portfolio exercise, not as a production benchmark or evidence of real-world generalization.
