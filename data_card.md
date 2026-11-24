@@ -35,3 +35,6 @@ One label is assigned according to `annotation_guidelines.md`. Complaint takes p
 
 ## Maintenance
 Any future data addition should record its provenance, license or permission basis, collection date, transformations, labeling method, and review status. Do not add external data unless its license and permitted use have been checked and documented.
+
+## Candidate External Data Source (Not Included)
+The [CFPB Consumer Complaint Database](https://www.consumerfinance.gov/data-research/consumer-complaints/) is an official public source whose published data the CFPB says is freely available to use, analyze, and build on. It is a possible source for a separate complaint-domain exercise. It is **not** merged into this four-label dataset: complaint narratives are complaint submissions, not a balanced source of Positive, Negative, Neutral, and Complaint examples. Treating all of them as a representative four-class sample would be methodologically unsound. Any future extraction should document the download date, selected fields, filtering, privacy review, and source attribution.
