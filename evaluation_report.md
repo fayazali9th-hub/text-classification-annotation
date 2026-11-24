@@ -91,3 +91,5 @@ Do not calculate or publish agreement statistics from labels that were not indep
 ## 8. Conclusion
 
 The repository now documents a reproducible, structurally validated annotation exercise with explicit label precedence, separate challenge cases, and a defined independent-review workflow. Its strongest evidence is documentation and data handling. Its principal evidence gap remains the absence of independent human review and naturally occurring, appropriately licensed data.
+## External Data Selection Decision
+A possible real-world source is the [CFPB Consumer Complaint Database](https://www.consumerfinance.gov/data-research/consumer-complaints/), which the CFPB states is freely available for anyone to use, analyze, and build on. It is not included in this release because its narrative records are complaint submissions and do not supply examples for all four labels in this project's taxonomy. Forcing those records into a four-class dataset would create a source/taxonomy mismatch. A future extension should keep a separate, clearly attributed complaint-domain dataset rather than presenting it as a balanced four-class benchmark.
