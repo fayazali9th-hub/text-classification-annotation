@@ -1,19 +1,23 @@
-# Dataset Evaluation Report
+# Dataset Evaluation and Quality Report
 
-## Dataset Summary
+## 1. Scope
+
+This report describes structural checks and documentation for the portfolio's synthetic text-classification data. It is not a semantic accuracy study or an independent annotation audit.
+
+## 2. Main Dataset Profile
 
 | Measure | Result |
 |---|---:|
-| Total records | 250 |
+| Records | 250 |
 | Unique IDs | 250 |
-| Missing text values | 0 |
-| Missing labels | 0 |
-| Labels outside the approved taxonomy | 0 |
-| Exact duplicate text samples | 0 |
+| Empty text fields | 0 |
+| Empty labels | 0 |
+| Labels outside taxonomy | 0 |
+| Exact duplicate text samples (case-insensitive) | 0 |
 
-## Label Distribution
+### Label Distribution
 
-| Primary label | Count | Share |
+| Label | Count | Share |
 |---|---:|---:|
 | Positive | 62 | 24.8% |
 | Negative | 63 | 25.2% |
@@ -21,47 +25,69 @@
 | Complaint | 63 | 25.2% |
 | **Total** | **250** | **100%** |
 
-The four classes are nearly balanced. This is a deliberately constructed portfolio dataset; the distribution is not intended to represent the frequency of these labels in real customer messages.
+The near-balanced distribution is intentional. It must not be interpreted as the natural prevalence of these categories in customer communications.
 
-## Validation
+## 3. Challenge Set
 
-The dataset was checked for:
-- Required columns: `ID`, `Text`, and `Label`
-- Unique, non-empty record IDs
-- Non-empty text and label fields
-- Labels restricted to the four categories in the annotation guide
-- Exact duplicate text samples
-- Record and label counts
+A separate file, `challenge_cases.csv`, contains 30 synthetic edge cases with an expected label and a written decision rationale. It is intended to demonstrate how the taxonomy handles mixed sentiment, implied requests, resolved issues, factual questions, and negative opinions.
 
-Run the included validation script from the repository root:
+The challenge set is not an independent test set: its examples and expected labels were authored as part of this portfolio exercise. It must not be used to claim external validation or unbiased model performance.
+
+## 4. Structural Validation
+
+Run:
 
 ```bash
 python3 validate_dataset.py
 ```
 
-The script checks structural integrity and reports the label distribution. It does not determine whether every label is semantically correct.
+The script checks:
+- Required columns and readable CSV structure
+- Non-empty IDs, text, and labels
+- Duplicate IDs
+- Exact duplicate text after trimming and case-folding
+- Labels restricted to the approved taxonomy
+- Challenge-set rationale and schema completeness
+- Record totals and label distribution
 
-## Dataset Composition
+A successful run establishes structural consistency only. It cannot judge whether a label is correct for the meaning of a message.
 
-The 250 examples cover common message contexts such as:
-- Product quality and usability
-- Customer support and service experiences
-- Orders, delivery, returns, and refunds
-- Payments, subscriptions, and account access
-- Scheduling, bookings, and general information
-- Software, devices, websites, and digital services
+## 5. Quality Assurance Status
 
-## Annotation Quality and Limitations
+| QA component | Status |
+|---|---|
+| Written annotation taxonomy | Documented |
+| Decision procedure and edge-case rules | Documented |
+| Structural CSV validation | Implemented in Python |
+| Synthetic challenge examples | Added |
+| Independent second annotator | Not completed |
+| Blind annotation comparison | Not completed |
+| Adjudication log | Template provided; no real adjudication claimed |
+| Cohen's kappa / inter-annotator agreement | Not measured |
+| Real-world external dataset validation | Not completed |
 
-The examples are synthetic and were prepared for demonstration. The dataset has not undergone independent double annotation, formal adjudication, or inter-annotator agreement measurement. No model training or model-performance evaluation is claimed.
+## 6. Known Limitations and Risks
 
-A stronger production workflow would include:
-1. Independent annotation by at least two annotators on an agreed sample.
-2. Disagreement review and documented adjudication.
-3. Calculation of an appropriate agreement statistic, such as Cohen's kappa for two annotators.
-4. Guideline revision and re-annotation where recurring ambiguity is found.
-5. A versioned audit trail for dataset and guideline changes.
+1. **Synthetic provenance:** Neither dataset establishes performance on naturally occurring customer messages.
+2. **No independent review:** Current labels have not been independently double-annotated.
+3. **No semantic gold standard:** Structural checks cannot confirm meaning-level correctness.
+4. **Taxonomy overlap:** Sentiment and complaint intent are conceptually different dimensions. The precedence rule makes this exercise operational but may not fit every production task.
+5. **Class balance:** The deliberately balanced labels do not model real-world class prevalence.
+6. **Language coverage:** The examples are primarily English and do not establish multilingual annotation capability.
+7. **No model evaluation:** No classifier performance or model benchmark is claimed.
 
-## Conclusion
+## 7. Recommended Next Validation Study
 
-The expanded dataset demonstrates a larger, nearly balanced, documented four-way labeling workflow with basic structural quality checks. Its synthetic nature means it remains a portfolio exercise, not a production benchmark or evidence of real-world generalization.
+1. Select a random sample from the 250 main records.
+2. Hide the existing labels from a second annotator.
+3. Have the second annotator apply the same guidelines independently.
+4. Record both sets of labels before discussion.
+5. Report raw agreement and Cohen's kappa for two annotators, with sample size and label distribution.
+6. Review disagreements and record adjudicated outcomes separately.
+7. Update guidelines and repeat a sample if substantial systematic ambiguity remains.
+
+Do not calculate or publish agreement statistics from labels that were not independently produced.
+
+## 8. Conclusion
+
+The repository now documents a reproducible, structurally validated annotation exercise with explicit label precedence, separate challenge cases, and a defined independent-review workflow. Its strongest evidence is documentation and data handling. Its principal evidence gap remains the absence of independent human review and naturally occurring, appropriately licensed data.
