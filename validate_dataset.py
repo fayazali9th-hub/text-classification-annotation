@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the structure of dataset.csv for the text-classification project."""
+"""Check required fields, IDs, duplicate text, and labels in dataset.csv."""
 
 import csv
 import sys
@@ -32,6 +32,7 @@ def main():
 
     errors = []
     seen_ids = set()
+    seen_texts = set()
     label_counts = Counter()
 
     for line_number, row in enumerate(rows, start=2):
@@ -48,6 +49,10 @@ def main():
 
         if not text:
             errors.append(f"Line {line_number}: empty Text field.")
+        elif text.casefold() in seen_texts:
+            errors.append(f"Line {line_number}: duplicate text sample.")
+        else:
+            seen_texts.add(text.casefold())
 
         if label not in ALLOWED_LABELS:
             errors.append(
@@ -59,6 +64,7 @@ def main():
 
     print(f"Records checked: {len(rows)}")
     print(f"Unique non-empty IDs: {len(seen_ids)}")
+    print(f"Unique non-empty text samples: {len(seen_texts)}")
     print("Label distribution:")
     for label in sorted(ALLOWED_LABELS):
         print(f"  {label}: {label_counts[label]}")
@@ -69,7 +75,7 @@ def main():
             print(f"- {error}")
         return 1
 
-    print("\nValidation passed: no structural issues found.")
+    print("\nValidation passed: no structural issues or exact text duplicates found.")
     return 0
 
 
