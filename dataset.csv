@@ -49,3 +49,203 @@ ID,Text,Label
 48,The replacement arrived and works perfectly. I'm pleased with the solution.,Positive
 49,The instructions are poorly written and hard to understand.,Negative
 50,"My payment went through, but the order was not created. Please resolve this.",Complaint
+51,"The checkout process was quick, and every step was easy to understand.",Positive
+52,The replacement charger works perfectly with my laptop.,Positive
+53,Your team kept me informed and delivered the order on the promised date.,Positive
+54,The instructions were clear enough that I finished the setup without help.,Positive
+55,I appreciate how smoothly the latest update runs.,Positive
+56,The course material is well organized and useful.,Positive
+57,The representative listened carefully and answered all my questions.,Positive
+58,The parcel was packed securely and arrived in excellent condition.,Positive
+59,This keyboard is comfortable to use during long work sessions.,Positive
+60,The new search filters make finding products much easier.,Positive
+61,"The refund was processed promptly, and the communication was clear.",Positive
+62,The report export worked exactly as I needed.,Positive
+63,I had a pleasant experience from booking through checkout.,Positive
+64,"The picture quality is sharp, even in a brightly lit room.",Positive
+65,The application saves my work reliably.,Positive
+66,The technician explained the repair and completed it neatly.,Positive
+67,The seating was comfortable and the staff were attentive.,Positive
+68,The updated dashboard is much easier to read.,Positive
+69,"I received exactly what I ordered, with no damage.",Positive
+70,The battery lasts through my entire workday.,Positive
+71,The delivery notifications were accurate and helpful.,Positive
+72,The support article answered my question immediately.,Positive
+73,The fabric feels durable and the stitching is tidy.,Positive
+74,The new feature has made my daily workflow simpler.,Positive
+75,The payment confirmation arrived within seconds.,Positive
+76,The staff handled the busy queue politely and efficiently.,Positive
+77,The audio is clear and the microphone picks up my voice well.,Positive
+78,The booking system was straightforward and reliable.,Positive
+79,The product matches the description and photographs.,Positive
+80,I am pleased with how quickly the team completed the installation.,Positive
+81,The mobile layout is clean and works well on my phone.,Positive
+82,The packaging used less plastic and still protected the item.,Positive
+83,The lesson examples made the topic much easier to understand.,Positive
+84,The search results are now more relevant to what I type.,Positive
+85,The order arrived earlier than the estimated delivery date.,Positive
+86,The chair is sturdy and comfortable.,Positive
+87,The new version opens files without any delay.,Positive
+88,The staff made the return process simple and stress-free.,Positive
+89,The data export preserved all of my column names correctly.,Positive
+90,The connection has been stable throughout the week.,Positive
+91,The instructions for assembling the desk were easy to follow.,Positive
+92,The product feels well made for its price.,Positive
+93,The customer portal gives a clear view of my account activity.,Positive
+94,The team responded with a useful answer on the first attempt.,Positive
+95,The appointment started on time and the service was excellent.,Positive
+96,The updated accessibility options make the app easier to use.,Positive
+97,The print quality is crisp and the colors look accurate.,Positive
+98,The parcel tracking page was accurate at every stage.,Positive
+99,The new keyboard shortcuts save me a lot of time.,Positive
+100,"Everything worked as expected, and I would use this service again.",Positive
+101,The screen becomes difficult to read under direct sunlight.,Negative
+102,The application takes too long to open on my computer.,Negative
+103,The instructions skip several important setup steps.,Negative
+104,The fabric started fading after only a few washes.,Negative
+105,The search results often ignore the words I enter.,Negative
+106,The headphones feel uncomfortable after twenty minutes.,Negative
+107,The website layout is cluttered and hard to follow.,Negative
+108,The latest update made the menu slower than before.,Negative
+109,The camera produces blurry images indoors.,Negative
+110,The food portions were smaller than I expected.,Negative
+111,The explanation uses too much jargon for a basic topic.,Negative
+112,The keyboard keys feel stiff and make typing unpleasant.,Negative
+113,The map directions are confusing around busy intersections.,Negative
+114,The video keeps buffering even when my connection is stable.,Negative
+115,The product description leaves out several important details.,Negative
+116,The waiting area was uncomfortable and poorly maintained.,Negative
+117,The report is difficult to read because the headings are inconsistent.,Negative
+118,The login page looks outdated and is not easy to navigate.,Negative
+119,The speaker volume is weak even at its highest setting.,Negative
+120,The battery loses charge much faster than advertised.,Negative
+121,The lesson repeats the same information without adding useful detail.,Negative
+122,The packaging is bulky and contains unnecessary material.,Negative
+123,The checkout page has too many steps.,Negative
+124,The chair feels unstable on a flat floor.,Negative
+125,The subtitles are often out of sync with the audio.,Negative
+126,The search function is unreliable when I use longer phrases.,Negative
+127,The menu labels are vague and do not explain what each option does.,Negative
+128,The print colors look dull compared with the preview.,Negative
+129,The app uses too much memory while running in the background.,Negative
+130,The room lighting was harsh and uncomfortable.,Negative
+131,The product feels cheaply made despite its high price.,Negative
+132,The online form is frustrating to complete on a phone.,Negative
+133,The dashboard hides important information below several menus.,Negative
+134,The audio recording has noticeable background noise.,Negative
+135,The instructions are poorly organized and difficult to scan.,Negative
+136,The delivery estimate changes too frequently to be useful.,Negative
+137,The mouse wheel feels loose and imprecise.,Negative
+138,The course moves too quickly through difficult concepts.,Negative
+139,The website uses small text that is hard to read.,Negative
+140,The app notifications are distracting and arrive too often.,Negative
+141,The display colors look washed out.,Negative
+142,The customer guide contains outdated screenshots.,Negative
+143,The seat padding is too thin for a long journey.,Negative
+144,The file upload process is slower than similar services.,Negative
+145,The product is heavier and less portable than I expected.,Negative
+146,The report formatting breaks when I open it on another device.,Negative
+147,The search page shows too many unrelated recommendations.,Negative
+148,The microphone makes my voice sound muffled.,Negative
+149,The navigation menu is inconsistent between different pages.,Negative
+150,The overall experience was disappointing and not worth the price.,Negative
+151,"The order contains one notebook, two pens, and a folder.",Neutral
+152,The training session begins at 10:30 AM on Monday.,Neutral
+153,The device supports Wi-Fi on the 2.4 GHz and 5 GHz bands.,Neutral
+154,The invoice was issued on 18 October.,Neutral
+155,"The account profile includes a name, email address, and phone number.",Neutral
+156,The package weighs approximately 1.8 kilograms.,Neutral
+157,The library closes at 6 PM from Monday through Friday.,Neutral
+158,The meeting agenda has four items.,Neutral
+159,The application is available for Android and iOS.,Neutral
+160,The document contains twelve pages.,Neutral
+161,The delivery address is listed as 24 Market Road.,Neutral
+162,The subscription renews on the first day of each month.,Neutral
+163,The laptop model was released in 2023.,Neutral
+164,The form asks for a date of birth and contact number.,Neutral
+165,The conference will be held in Hall C.,Neutral
+166,"The table has columns for date, category, and amount.",Neutral
+167,"The store accepts cash, debit cards, and mobile payments.",Neutral
+168,The parcel tracking number is printed below the barcode.,Neutral
+169,The course contains six modules and two assessments.,Neutral
+170,The office has three meeting rooms.,Neutral
+171,"The product is available in black, silver, and blue.",Neutral
+172,The file was saved in PDF format.,Neutral
+173,The bus leaves the station every thirty minutes.,Neutral
+174,The report covers sales from January through March.,Neutral
+175,The device has a 13-inch display.,Neutral
+176,The appointment confirmation includes the clinic address.,Neutral
+177,The website lists the company's opening hours.,Neutral
+178,The order was placed through the mobile application.,Neutral
+179,The dataset contains records from five regions.,Neutral
+180,The room number is 204 on the second floor.,Neutral
+181,The account was created using an email address.,Neutral
+182,The package label shows the destination postal code.,Neutral
+183,The software supports CSV and XLSX file imports.,Neutral
+184,The workshop includes a practical exercise after the presentation.,Neutral
+185,The train platform is displayed on the station board.,Neutral
+186,The phone has 128 GB of internal storage.,Neutral
+187,The document was last modified on Tuesday.,Neutral
+188,The receipt lists the item price and applicable tax.,Neutral
+189,The service is offered in four cities.,Neutral
+190,The meeting invitation includes a video conference link.,Neutral
+191,The warehouse inventory is updated every evening.,Neutral
+192,The form contains separate fields for first and last name.,Neutral
+193,The order includes a user manual and a charging cable.,Neutral
+194,The office address appears in the footer of the document.,Neutral
+195,The event registration closes on 30 November.,Neutral
+196,"The application menu contains settings, help, and account options.",Neutral
+197,The report was exported at 2:15 PM.,Neutral
+198,The package was collected from the distribution center.,Neutral
+199,The device measures 18 centimeters in length.,Neutral
+200,The notice provides the timetable for the next three weeks.,Neutral
+201,My account was charged for a service I never activated. Please reverse the payment.,Complaint
+202,The parcel tracking has not changed for six days. Please check where it is.,Complaint
+203,I received a cracked screen protector instead of an undamaged one. Please send a replacement.,Complaint
+204,"The payment was deducted, but my booking is still marked as unpaid. Please correct the status.",Complaint
+205,I cannot download the files included in my paid course. Please restore access.,Complaint
+206,The technician did not arrive during the confirmed time slot. Please arrange another appointment.,Complaint
+207,My order contains the wrong model. Please arrange an exchange.,Complaint
+208,The app deleted my saved entries after the update. Please help recover them.,Complaint
+209,"I returned the item two weeks ago, but the refund has not arrived. Please investigate.",Complaint
+210,"The delivery was marked complete, but nothing was left at my address. Please trace the parcel.",Complaint
+211,I was billed twice for the same monthly subscription. Please refund the duplicate charge.,Complaint
+212,"The password reset email never arrives, so I cannot access my account. Please help.",Complaint
+213,The product stopped charging after two days. I need a repair or replacement.,Complaint
+214,My appointment was cancelled without notice. Please provide a new date.,Complaint
+215,The invoice includes an item I did not purchase. Please issue a corrected invoice.,Complaint
+216,The service keeps disconnecting during calls. Please investigate the connection problem.,Complaint
+217,I selected express delivery but the order was sent by standard shipping. Please review the charge.,Complaint
+218,The package was left outside in the rain and the contents are damaged. Please resolve this.,Complaint
+219,My account is showing someone else's transaction. Please investigate this security issue.,Complaint
+220,The course certificate is missing even though I completed all required lessons. Please issue it.,Complaint
+221,The replacement item has the same defect as the original. Please arrange a proper solution.,Complaint
+222,I cannot cancel the subscription through the account page. Please stop the next renewal.,Complaint
+223,The driver delivered my order to another building. Please arrange collection and redelivery.,Complaint
+224,The amount refunded is lower than the amount charged. Please explain and correct the difference.,Complaint
+225,"The application will not accept the verification code, so I am locked out. Please fix it.",Complaint
+226,My reservation was confirmed but the venue has no record of it. Please resolve the booking.,Complaint
+227,"The repair was not completed, although the service is marked as finished. Please review the job.",Complaint
+228,I paid for priority support but have not received a response. Please follow up on my case.,Complaint
+229,The parcel arrived with one of the listed items missing. Please send the missing item.,Complaint
+230,My contact details were changed without my permission. Please secure the account and investigate.,Complaint
+231,The download link in my purchase confirmation is broken. Please provide a working link.,Complaint
+232,The order total at checkout was different from the amount charged. Please correct the overcharge.,Complaint
+233,The device overheats and shuts down during normal use. Please advise on a replacement.,Complaint
+234,"I submitted the required documents, but my application is still incorrectly marked incomplete. Please review it.",Complaint
+235,The service technician left the installation unfinished. Please send someone to complete the work.,Complaint
+236,My package was sent to an old address despite the updated delivery details. Please reroute it.,Complaint
+237,The website charged me after displaying an error and cancelling the order. Please refund the payment.,Complaint
+238,I cannot access the account balance because the page shows an error. Please investigate.,Complaint
+239,"The item arrived with parts missing, so I cannot assemble it. Please send the missing parts.",Complaint
+240,"My refund request was approved, but the payment has not been returned. Please check its status.",Complaint
+241,The scheduled pickup was missed for the second time. Please arrange a confirmed collection.,Complaint
+242,The service activated the wrong plan on my account. Please switch it to the plan I purchased.,Complaint
+243,"I received a notification that my order shipped, but the courier says no parcel was handed over. Please check.",Complaint
+244,The file conversion failed and I was still charged for the attempt. Please refund the fee.,Complaint
+245,My account was suspended without an explanation. Please review the suspension and restore access if it was an error.,Complaint
+246,The item delivered is a different color from the one I selected. Please exchange it.,Complaint
+247,The support ticket was closed without resolving the problem. Please reopen it and investigate.,Complaint
+248,The payment receipt has the wrong customer name. Please issue a corrected receipt.,Complaint
+249,The service appointment was booked for the wrong date despite my confirmation. Please correct the booking.,Complaint
+250,My order is missing from the purchase history even though the payment was successful. Please restore the record.,Complaint
