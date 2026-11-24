@@ -1,0 +1,31 @@
+Case_ID,Text,Expected_Label,Decision_Rationale
+C001,"The new dashboard is clean, fast, and easy to understand.",Positive,Clear praise; no unresolved issue.
+C002,The camera quality is worse than the previous model.,Negative,Unfavorable comparison without a reported failure needing intervention.
+C003,The store closes at 8 PM on Sundays.,Neutral,Factual operating-hours information.
+C004,I was charged twice for one order. Please refund the extra charge.,Complaint,Specific billing error and explicit remedy request.
+C005,"Your agent was polite, but my account is still locked.",Complaint,Praise is outweighed by an unresolved access issue.
+C006,I wish the checkout page had fewer steps.,Negative,"A product criticism or preference, not an active incident requiring intervention."
+C007,Can you tell me whether the plan includes cloud storage?,Neutral,Straightforward product-information question.
+C008,The plan includes 100 GB of cloud storage.,Neutral,Factual statement without sentiment.
+C009,My cloud storage disappeared after I upgraded. Please restore it.,Complaint,A specific service loss requires corrective action.
+C010,"The refund arrived today, and I appreciate the quick support.",Positive,The issue is resolved and satisfaction is expressed.
+C011,"The parcel arrived late, and the delay was frustrating.",Negative,"Negative experience is stated, but no active remedy is requested."
+C012,The parcel is three days late. Can you check where it is?,Complaint,An unresolved delivery issue and request for help.
+C013,This keyboard feels cheap and uncomfortable.,Negative,Negative product opinion without an active repair or support issue.
+C014,Several keys stopped responding. How can I get a replacement?,Complaint,Specific product malfunction requiring resolution.
+C015,The meeting has been moved to Tuesday morning.,Neutral,A logistical update.
+C016,I love the new layout; it makes everything easier.,Positive,Explicit favorable opinion.
+C017,The app keeps crashing whenever I open my invoices.,Complaint,A recurring functional failure prevents normal use.
+C018,The app looks outdated compared with its competitors.,Negative,Criticism without a specific unresolved incident.
+C019,"Thanks, the support team fixed the login problem.",Positive,The problem is resolved and gratitude is expressed.
+C020,"I cannot access the paid account, and the reset email never arrives.",Complaint,Specific unresolved account-access failure; intervention is clearly needed.
+C021,Does the device support Bluetooth 5.3?,Neutral,Factual capability question.
+C022,The device supports Bluetooth 5.3 and USB-C charging.,Neutral,Product specifications only.
+C023,"The headphones sound excellent, but the left earbud will not charge. Please replace it.",Complaint,An unresolved hardware defect requiring replacement takes precedence over praise.
+C024,The headphones sound excellent and the battery lasts all day.,Positive,Entire message describes a favorable experience.
+C025,I am unhappy with the color options.,Negative,Dissatisfaction without an active issue needing intervention.
+C026,"My cancellation was confirmed, but another monthly payment was taken. Reverse it, please.",Complaint,Post-cancellation billing error requiring a refund.
+C027,The technician visited yesterday and completed the installation.,Neutral,Factual service-status statement without evaluation.
+C028,The technician was friendly and completed the installation perfectly.,Positive,Favorable evaluation of the service.
+C029,"The technician arrived two hours late, which was unacceptable.",Negative,"A negative experience is described, but no specific remedy is requested."
+C030,The technician damaged the wall during installation. Please arrange a repair.,Complaint,Specific damage caused during service and an explicit resolution request.
