@@ -4,31 +4,33 @@
 
 | Measure | Result |
 |---|---:|
-| Total records | 50 |
-| Unique IDs | 50 |
+| Total records | 250 |
+| Unique IDs | 250 |
 | Missing text values | 0 |
 | Missing labels | 0 |
 | Labels outside the approved taxonomy | 0 |
+| Exact duplicate text samples | 0 |
 
 ## Label Distribution
 
-| Primary label | Count |
-|---|---:|
-| Positive | 12 |
-| Negative | 13 |
-| Neutral | 12 |
-| Complaint | 13 |
-| **Total** | **50** |
+| Primary label | Count | Share |
+|---|---:|---:|
+| Positive | 62 | 24.8% |
+| Negative | 63 | 25.2% |
+| Neutral | 62 | 24.8% |
+| Complaint | 63 | 25.2% |
+| **Total** | **250** | **100%** |
 
-The categories are nearly balanced in this deliberately constructed sample. This distribution should not be interpreted as representative of real customer messages.
+The four classes are nearly balanced. This is a deliberately constructed portfolio dataset; the distribution is not intended to represent the frequency of these labels in real customer messages.
 
 ## Validation
 
-The dataset has been checked for:
+The dataset was checked for:
 - Required columns: `ID`, `Text`, and `Label`
-- Unique record IDs
+- Unique, non-empty record IDs
 - Non-empty text and label fields
 - Labels restricted to the four categories in the annotation guide
+- Exact duplicate text samples
 - Record and label counts
 
 Run the included validation script from the repository root:
@@ -37,7 +39,17 @@ Run the included validation script from the repository root:
 python3 validate_dataset.py
 ```
 
-The script checks structural integrity and reports the label distribution. It does not determine whether a label is semantically correct.
+The script checks structural integrity and reports the label distribution. It does not determine whether every label is semantically correct.
+
+## Dataset Composition
+
+The 250 examples cover common message contexts such as:
+- Product quality and usability
+- Customer support and service experiences
+- Orders, delivery, returns, and refunds
+- Payments, subscriptions, and account access
+- Scheduling, bookings, and general information
+- Software, devices, websites, and digital services
 
 ## Annotation Quality and Limitations
 
@@ -52,4 +64,4 @@ A stronger production workflow would include:
 
 ## Conclusion
 
-The current dataset demonstrates a documented four-way labeling workflow and basic structural quality checks. Its size and synthetic nature make it suitable as a portfolio exercise, not as a production benchmark or evidence of real-world generalization.
+The expanded dataset demonstrates a larger, nearly balanced, documented four-way labeling workflow with basic structural quality checks. Its synthetic nature means it remains a portfolio exercise, not a production benchmark or evidence of real-world generalization.
