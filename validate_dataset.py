@@ -1,81 +1,123 @@
 #!/usr/bin/env python3
-"""Check required fields, IDs, duplicate text, and labels in dataset.csv."""
+"""Validate structural quality of the portfolio CSV datasets.
+
+This script checks file structure and allowed values. It does not assess
+whether a label is semantically correct.
+"""
 
 import csv
 import sys
 from collections import Counter
 from pathlib import Path
 
-DATASET_PATH = Path(__file__).with_name("dataset.csv")
-REQUIRED_COLUMNS = {"ID", "Text", "Label"}
-ALLOWED_LABELS = {"Positive", "Negative", "Neutral", "Complaint"}
+ROOT = Path(__file__).resolve().parent
+MAIN_PATH = ROOT / "dataset.csv"
+CHALLENGE_PATH = ROOT / "challenge_cases.csv"
+
+LABELS = {"Positive", "Negative", "Neutral", "Complaint"}
+MAIN_COLUMNS = ["ID", "Text", "Label"]
+CHALLENGE_COLUMNS = ["Case_ID", "Text", "Expected_Label", "Decision_Rationale"]
 
 
-def main():
-    if not DATASET_PATH.exists():
-        print(f"ERROR: Dataset file not found: {DATASET_PATH}")
-        return 1
+def read_csv(path, required_columns, errors):
+    if not path.exists():
+        errors.append(f"{path.name}: file not found.")
+        return []
 
-    with DATASET_PATH.open("r", encoding="utf-8-sig", newline="") as file:
-        reader = csv.DictReader(file)
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+            reader = csv.DictReader(handle)
+            if reader.fieldnames is None:
+                errors.append(f"{path.name}: missing header.")
+                return []
+            if reader.fieldnames != required_columns:
+                errors.append(
+                    f"{path.name}: expected columns {required_columns}, "
+                    f"found {reader.fieldnames}."
+                )
+                return []
+            return list(reader)
+    except (OSError, UnicodeError, csv.Error) as exc:
+        errors.append(f"{path.name}: could not read CSV: {exc}")
+        return []
 
-        if reader.fieldnames is None:
-            print("ERROR: Dataset is empty or has no header.")
-            return 1
 
-        missing_columns = REQUIRED_COLUMNS - set(reader.fieldnames)
-        if missing_columns:
-            print("ERROR: Missing required columns:", ", ".join(sorted(missing_columns)))
-            return 1
-
-        rows = list(reader)
-
-    errors = []
+def validate_rows(path, rows, id_column, text_column, label_column,
+                  rationale_column, errors):
     seen_ids = set()
-    seen_texts = set()
-    label_counts = Counter()
+    seen_text = set()
+    counts = Counter()
 
-    for line_number, row in enumerate(rows, start=2):
-        record_id = (row.get("ID") or "").strip()
-        text = (row.get("Text") or "").strip()
-        label = (row.get("Label") or "").strip()
+    for line, row in enumerate(rows, start=2):
+        record_id = (row.get(id_column) or "").strip()
+        text = (row.get(text_column) or "").strip()
+        label = (row.get(label_column) or "").strip()
 
         if not record_id:
-            errors.append(f"Line {line_number}: missing ID.")
+            errors.append(f"{path.name}:{line}: empty {id_column}.")
         elif record_id in seen_ids:
-            errors.append(f"Line {line_number}: duplicate ID {record_id!r}.")
+            errors.append(f"{path.name}:{line}: duplicate ID {record_id!r}.")
         else:
             seen_ids.add(record_id)
 
+        normalized_text = " ".join(text.split()).casefold()
         if not text:
-            errors.append(f"Line {line_number}: empty Text field.")
-        elif text.casefold() in seen_texts:
-            errors.append(f"Line {line_number}: duplicate text sample.")
+            errors.append(f"{path.name}:{line}: empty {text_column}.")
+        elif normalized_text in seen_text:
+            errors.append(f"{path.name}:{line}: duplicate text after normalization.")
         else:
-            seen_texts.add(text.casefold())
+            seen_text.add(normalized_text)
 
-        if label not in ALLOWED_LABELS:
+        if label not in LABELS:
             errors.append(
-                f"Line {line_number}: invalid Label {label!r}. "
-                f"Allowed labels: {', '.join(sorted(ALLOWED_LABELS))}."
+                f"{path.name}:{line}: invalid label {label!r}; "
+                f"allowed: {', '.join(sorted(LABELS))}."
             )
         else:
-            label_counts[label] += 1
+            counts[label] += 1
 
-    print(f"Records checked: {len(rows)}")
-    print(f"Unique non-empty IDs: {len(seen_ids)}")
-    print(f"Unique non-empty text samples: {len(seen_texts)}")
-    print("Label distribution:")
-    for label in sorted(ALLOWED_LABELS):
-        print(f"  {label}: {label_counts[label]}")
+        if rationale_column and not (row.get(rationale_column) or "").strip():
+            errors.append(f"{path.name}:{line}: empty {rationale_column}.")
+
+    print(f"\n{path.name}: {len(rows)} records")
+    print(f"  Unique IDs: {len(seen_ids)}")
+    print(f"  Unique normalized texts: {len(seen_text)}")
+    if label_column:
+        print("  Label distribution:")
+        for label in sorted(LABELS):
+            print(f"    {label}: {counts[label]}")
+
+    return counts
+
+
+def main():
+    errors = []
+    main_rows = read_csv(MAIN_PATH, MAIN_COLUMNS, errors)
+    challenge_rows = read_csv(CHALLENGE_PATH, CHALLENGE_COLUMNS, errors)
+
+    main_counts = validate_rows(
+        MAIN_PATH, main_rows, "ID", "Text", "Label", None, errors
+    )
+    validate_rows(
+        CHALLENGE_PATH, challenge_rows, "Case_ID", "Text",
+        "Expected_Label", "Decision_Rationale", errors
+    )
+
+    if not main_rows:
+        errors.append("Main dataset contains no usable records.")
+    if not challenge_rows:
+        errors.append("Challenge dataset contains no usable records.")
+
+    print(f"\nMain dataset total: {sum(main_counts.values())}")
 
     if errors:
-        print(f"\nValidation failed with {len(errors)} issue(s):")
-        for error in errors:
-            print(f"- {error}")
+        print(f"\nVALIDATION FAILED: {len(errors)} issue(s)")
+        for issue in errors:
+            print(f"- {issue}")
         return 1
 
-    print("\nValidation passed: no structural issues or exact text duplicates found.")
+    print("\nVALIDATION PASSED: structural checks found no issues.")
+    print("This result does not establish semantic label correctness.")
     return 0
 
 
