@@ -1,57 +1,81 @@
-# Text Classification Annotation
+# Text Classification Annotation Portfolio
 
-## Project Overview
+A documented text-annotation project demonstrating a four-label classification workflow, explicit decision rules, edge-case handling, dataset validation, and a reproducible quality-review process.
 
-This project demonstrates a structured text-labeling workflow using 250 synthetic text samples. Each sample is assigned one primary label according to a documented annotation guide.
+> **Data disclosure:** The main dataset and challenge cases are synthetic examples created for this portfolio. They are not customer records, a licensed public benchmark, or evidence of production annotation work.
 
-The task uses four labels: **Positive**, **Negative**, **Neutral**, and **Complaint**. Positive, Negative, and Neutral describe the message's sentiment or informational content. Complaint identifies a message that reports an active problem requiring intervention. The guidelines define a decision order because these concepts can overlap.
+## Project at a Glance
 
-## Annotation Categories
-
-| Label | When to use it |
+| Item | Details |
 |---|---|
-| Positive | The message expresses satisfaction, praise, or a favorable experience. |
-| Negative | The message expresses dissatisfaction without requesting a specific remedy. |
-| Neutral | The message is factual or informational, without clear sentiment or an active complaint. |
-| Complaint | The message reports a specific problem that needs help, correction, investigation, replacement, refund, or another resolution. |
+| Task | Single-label text classification |
+| Labels | Positive, Negative, Neutral, Complaint |
+| Main dataset | 250 synthetic records |
+| Challenge set | 30 synthetic edge cases with rationales |
+| Data format | CSV |
+| Validation | Python standard-library script |
+| QA documentation | Annotation guide, error analysis, QC checklist, audit template, evaluation report |
 
-## Dataset
+## Label Taxonomy
 
-- **Records:** 250 synthetic examples
-- **Format:** CSV
-- **Fields:** `ID`, `Text`, `Label`
-- **Label distribution:** Positive (62), Negative (63), Neutral (62), Complaint (63)
+| Label | Definition |
+|---|---|
+| **Positive** | Satisfaction, praise, gratitude, or a favorable experience without an unresolved issue requiring action. |
+| **Negative** | Dissatisfaction or criticism without a specific active issue requiring intervention. |
+| **Neutral** | Factual or informational content without clear sentiment or an active complaint. |
+| **Complaint** | A specific unresolved problem that needs help, correction, investigation, replacement, refund, or another resolution. |
 
-The examples are illustrative portfolio data, not customer records or production data.
+**Precedence rule:** Complaint takes priority when an unresolved issue requires intervention. Otherwise, classify the expressed sentiment or informational content. Apply the full decision guide in `annotation_guidelines.md`.
 
 ## Repository Contents
 
 | File | Purpose |
 |---|---|
-| `dataset.csv` | Labeled text samples |
-| `annotation_guidelines.md` | Label definitions, decision order, and annotation rules |
-| `evaluation_report.md` | Dataset summary, structural checks, and limitations |
-| `error_analysis.md` | Ambiguous examples and label-boundary notes |
-| `validate_dataset.py` | Reusable script for checking CSV structure and labels |
+| `dataset.csv` | 250 synthetic main-dataset records |
+| `challenge_cases.csv` | 30 separate edge cases with expected labels and decision rationales |
+| `annotation_guidelines.md` | Label definitions, decision tree, and annotation procedure |
+| `error_analysis.md` | Common confusion pairs and edge-case decisions |
+| `evaluation_report.md` | Dataset profile, validation scope, limitations, and next QA steps |
+| `data_card.md` | Dataset provenance, intended use, risks, and limitations |
+| `quality_control_checklist.md` | Batch-level and record-level review checklist |
+| `annotation_audit_template.csv` | Blank template for independent review and adjudication |
+| `validate_dataset.py` | Structural validation for both CSV datasets |
 
-## Run the Validator
+## Run Validation
 
-Run this command from the repository directory:
+Requires Python 3; no third-party packages are needed.
 
 ```bash
 python3 validate_dataset.py
 ```
 
-The script checks required columns, missing values, duplicate IDs, allowed labels, and label distribution. These are structural checks; they do not prove that every label is semantically correct.
+The validator checks required columns, malformed or empty fields, duplicate IDs, duplicate text, approved labels, and label distribution. It also validates the challenge-set schema and rationale fields.
 
-## What This Project Demonstrates
+**Important:** Passing validation means the files meet defined structural rules. It does not prove that a human-assigned label is semantically correct.
 
-- Applying a written labeling taxonomy
-- Classifying short text samples
-- Working with structured CSV data
-- Documenting ambiguous label boundaries
-- Performing basic dataset quality checks with Python
+## Suggested Independent QA Workflow
 
-## Scope and Limitations
+1. Give a reviewer the annotation guidelines and a copy of the main dataset with the existing `Label` column hidden.
+2. Ask the reviewer to label a randomly selected sample independently.
+3. Record their decisions in `annotation_audit_template.csv`.
+4. Compare the independent labels with the original labels.
+5. Document disagreements and adjudicated outcomes with reasons.
+6. For two annotators and nominal labels, calculate Cohen's kappa alongside raw agreement; interpret both in context.
+7. Revise the guidelines if recurring disagreement reveals unclear rules.
 
-This is a small synthetic demonstration dataset. It is intended to show the annotation workflow and documentation, not to claim production-scale annotation experience or model performance. The dataset has not been independently double-annotated, adjudicated, or measured for inter-annotator agreement. A production workflow would require independent review, disagreement resolution, and appropriate agreement measurements.
+Do not report agreement, accuracy, or adjudication results until this process has actually been completed.
+
+## What This Demonstrates
+
+- Applying a written classification taxonomy
+- Distinguishing sentiment from action-requiring complaints
+- Handling ambiguous and mixed-sentiment examples
+- Preparing and inspecting structured CSV datasets
+- Writing Python checks for data integrity
+- Documenting limitations and a repeatable QA process
+
+## Limitations
+
+The datasets are synthetic and deliberately close to balanced. They do not represent real customer-message prevalence or establish performance on naturally occurring language. The current labels have not been independently double-annotated or adjudicated. No model training, benchmark performance, production-scale work, or inter-annotator agreement is claimed.
+
+See `data_card.md` and `evaluation_report.md` for the full scope and limitations.
