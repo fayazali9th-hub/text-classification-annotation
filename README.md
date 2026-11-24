@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates a structured text-labeling workflow using 50 synthetic text samples. Each sample is assigned one primary label according to a documented annotation guide.
+This project demonstrates a structured text-labeling workflow using 250 synthetic text samples. Each sample is assigned one primary label according to a documented annotation guide.
 
 The task uses four labels: **Positive**, **Negative**, **Neutral**, and **Complaint**. Positive, Negative, and Neutral describe the message's sentiment or informational content. Complaint identifies a message that reports an active problem requiring intervention. The guidelines define a decision order because these concepts can overlap.
 
@@ -17,10 +17,10 @@ The task uses four labels: **Positive**, **Negative**, **Neutral**, and **Compla
 
 ## Dataset
 
-- **Records:** 50 synthetic examples
+- **Records:** 250 synthetic examples
 - **Format:** CSV
 - **Fields:** `ID`, `Text`, `Label`
-- **Label distribution:** Positive (12), Negative (13), Neutral (12), Complaint (13)
+- **Label distribution:** Positive (62), Negative (63), Neutral (62), Complaint (63)
 
 The examples are illustrative portfolio data, not customer records or production data.
 
