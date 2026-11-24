@@ -36,7 +36,14 @@ def read_csv(path, required_columns, errors):
                     f"found {reader.fieldnames}."
                 )
                 return []
-            return list(reader)
+            rows = list(reader)
+            for line, row in enumerate(rows, start=2):
+                if None in row or any(value is None for value in row.values()):
+                    errors.append(
+                        f"{path.name}:{line}: row has a different number of fields "
+                        "than the header."
+                    )
+            return rows
     except (OSError, UnicodeError, csv.Error) as exc:
         errors.append(f"{path.name}: could not read CSV: {exc}")
         return []
